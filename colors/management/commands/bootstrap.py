@@ -10,7 +10,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for user_id in range(1, 3):
-            user = get_user_model().objects.create(username=f"user{user_id}", password=f"user{user_id}")
+            user = get_user_model().objects.create(username=f"user{user_id}")
+            user.set_password(f"user{user_id}")
+            user.save()
             Token.objects.get_or_create(user=user)
             for colorbox_id in range(1, 11):
                 ColorBox.objects.create(user=user, color="000000")

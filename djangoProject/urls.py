@@ -27,5 +27,6 @@ router.register(r'pixels', ColorBoxViewSet, basename="pixel")
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('colors', ColorView.as_view(), name="colors"),
+    path('auth/', include('dj_rest_auth.urls')),
     path('', include(router.urls)),
 ]
