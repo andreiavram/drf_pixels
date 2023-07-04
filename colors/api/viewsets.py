@@ -10,3 +10,6 @@ class ColorBoxViewSet(viewsets.ModelViewSet):
     queryset = ColorBox.objects.all()
     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
     serializer_class = ColorBoxSerializer
+
+    def get_exception_handler(self):
+        pass
