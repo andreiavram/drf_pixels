@@ -23,7 +23,7 @@
             const jsonData = await response.json();
             jsonData.forEach(e => {
                 {#document.getElementById("color" + e.id).style.backgroundColor = `rgb(${e.red}, ${e.green}, ${e.blue})`;#}
-                document.getElementById("color" + e.id).style.backgroundColor = `rgb(${e.color.red}, ${e.color.green}, ${e.color.blue})`;
+                document.getElementById("color" + e.id).style.backgroundColor = `#${e.color}`;
             });
             console.log(jsonData);
         }
