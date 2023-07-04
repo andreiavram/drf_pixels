@@ -9,5 +9,3 @@ class ColorBoxSerializer(serializers.ModelSerializer):
         model = ColorBox
         fields = ["id", "color"]
         read_only_fields = ["id", ]
-
-    color = ColorField()

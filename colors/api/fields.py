@@ -1,3 +1,5 @@
+import json
+
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
@@ -19,5 +21,6 @@ class ColorField(serializers.Field):
         return representation
 
     def to_internal_value(self, data):
+        print(type(data))
         return '{:02x}{:02x}{:02x}'.format(data['red'], data['green'], data['blue'])
 
